@@ -11,10 +11,10 @@ import Foundation
 
 class ObjectConverter {
     
-    public func ConvertToData(student: Student) throws -> Data {
+    public func ConvertToData(object: Student) throws -> Data {
                 
         let jsonEncoder = JSONEncoder()
-        let jsonData = try jsonEncoder.encode(mapStudentDomainToStudentDTO(student: student))
+        let jsonData = try jsonEncoder.encode(object)
         
         guard let json = String(data: jsonData, encoding: String.Encoding.utf8) else {
             throw ErrorMessage.errorRegisteringStudent(error: ErrorDTO(errorMessage: "Error serializing object"))
@@ -26,11 +26,4 @@ class ObjectConverter {
         
         return data;
     }
-    
-    private func mapStudentDomainToStudentDTO(student: Student) -> StudentDTO {
-        let studentEntity = StudentDTO(firstName: student.firstname, lastName: student.lastname, redId: String(student.redid), password: student.password, email: student.email)
-        
-        return studentEntity;
-    }
-    
 }

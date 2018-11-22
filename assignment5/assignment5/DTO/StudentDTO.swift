@@ -10,16 +10,16 @@ import Foundation
 
 class StudentDTO {
     
-    var firstName: String?;
-    var lastName: String?;
-    var redId: String?;
+    var firstname: String?;
+    var lastname: String?;
+    var redid: String?;
     var password: String?;
     var email: String?;
     
     init(firstName: String?, lastName: String?, redId: String?, password: String?, email: String?) {
-        self.firstName = firstName;
-        self.lastName = lastName;
-        self.redId = redId;
+        self.firstname = firstName;
+        self.lastname = lastName;
+        self.redid = redId;
         self.password = password;
         self.email = email;
     }

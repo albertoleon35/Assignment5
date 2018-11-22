@@ -18,7 +18,7 @@ class StudentService {
     
     public func isStudentValid() -> Student? {
         
-        guard let redid = self.student.redId, self.isRedIdValid(redId: redid.trimmingCharacters(in: .whitespaces)) else {
+        guard let redid = self.student.redid, self.isRedIdValid(redId: redid.trimmingCharacters(in: .whitespaces)) else {
             return nil;
         }
         
@@ -30,11 +30,11 @@ class StudentService {
             return nil;
         }
         
-        guard let redIdNumber = Int(redid), let firstName = student.firstName, let lastName = self.student.lastName else {
+        guard let firstName = student.firstname, let lastName = self.student.lastname else {
             return nil;
         }
         
-        return Student(firstName: firstName, lastName: lastName, redId: redIdNumber, password: password, email: email);
+        return Student(firstName: firstName, lastName: lastName, redId: redid, password: password, email: email);
     }
     
     fileprivate func isRedIdValid(redId: String) -> Bool {

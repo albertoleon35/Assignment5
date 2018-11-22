@@ -8,18 +8,18 @@
 
 import Foundation
 
-class Student {
+class Student : Codable {
     
-    let firstName: String;
-    let lastName: String;
-    let redId: Int;
+    let firstname: String;
+    let lastname: String;
+    let redid: String;
     let password: String;
     let email: String;
     
-    init(firstName: String, lastName: String, redId: Int, password: String, email: String) {
-        self.firstName = firstName;
-        self.lastName = lastName;
-        self.redId = redId;
+    init(firstName: String, lastName: String, redId: String, password: String, email: String) {
+        self.firstname = firstName;
+        self.lastname = lastName;
+        self.redid = redId;
         self.password = password;
         self.email = email;
     }

@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+class Constants {
+    public static let bismarck = "https://bismarck.sdsu.edu/registration/"
+}
+
