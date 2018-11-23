@@ -18,8 +18,9 @@
 		7A2A148A2190E52D00FC34B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A2A14882190E52D00FC34B5 /* LaunchScreen.storyboard */; };
 		7A2A14952190E52D00FC34B5 /* assignment5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2A14942190E52D00FC34B5 /* assignment5Tests.swift */; };
 		7A2A14A02190E52D00FC34B5 /* assignment5UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2A149F2190E52D00FC34B5 /* assignment5UITests.swift */; };
-		7A5160C021993BC500BD7529 /* ErrorDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5160BF21993BC500BD7529 /* ErrorDTO.swift */; };
-		7A5160C321993D6500BD7529 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5160C221993D6500BD7529 /* ErrorMessage.swift */; };
+		7A4160AC21A665110061A12C /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4160AB21A665110061A12C /* SuccessResponse.swift */; };
+		7A5160C021993BC500BD7529 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5160BF21993BC500BD7529 /* ErrorMessage.swift */; };
+		7A5160C321993D6500BD7529 /* ErrorException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5160C221993D6500BD7529 /* ErrorException.swift */; };
 		7A5160C521993FD600BD7529 /* ObjectConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5160C421993FD600BD7529 /* ObjectConverter.swift */; };
 		7AA5201121A4E93A00F73457 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5201021A4E93A00F73457 /* Constants.swift */; };
 		7AB4575D219D00DA002F3987 /* Gateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4575C219D00DA002F3987 /* Gateway.swift */; };
@@ -64,8 +65,9 @@
 		7A2A149B2190E52D00FC34B5 /* assignment5UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = assignment5UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2A149F2190E52D00FC34B5 /* assignment5UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = assignment5UITests.swift; sourceTree = "<group>"; };
 		7A2A14A12190E52D00FC34B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7A5160BF21993BC500BD7529 /* ErrorDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDTO.swift; sourceTree = "<group>"; };
-		7A5160C221993D6500BD7529 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		7A4160AB21A665110061A12C /* SuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponse.swift; sourceTree = "<group>"; };
+		7A5160BF21993BC500BD7529 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		7A5160C221993D6500BD7529 /* ErrorException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorException.swift; sourceTree = "<group>"; };
 		7A5160C421993FD600BD7529 /* ObjectConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectConverter.swift; sourceTree = "<group>"; };
 		7AA5201021A4E93A00F73457 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7AB4575C219D00DA002F3987 /* Gateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gateway.swift; sourceTree = "<group>"; };
@@ -155,8 +157,9 @@
 		7A1261FF2199043D00CEABFF /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				7A5160BF21993BC500BD7529 /* ErrorDTO.swift */,
-				7AC9C90521A65A82002156B1 /* StudentDTO.swift */,
+				7ADB946121A7614800D253F0 /* exception */,
+				7ADB946021A7613800D253F0 /* application */,
+				7ADB945F21A7609300D253F0 /* serverResponse */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -225,7 +228,7 @@
 		7A5160C121993D5300BD7529 /* exception */ = {
 			isa = PBXGroup;
 			children = (
-				7A5160C221993D6500BD7529 /* ErrorMessage.swift */,
+				7A5160C221993D6500BD7529 /* ErrorException.swift */,
 			);
 			path = exception;
 			sourceTree = "<group>";
@@ -236,6 +239,30 @@
 				7AB4575C219D00DA002F3987 /* Gateway.swift */,
 			);
 			path = gateway;
+			sourceTree = "<group>";
+		};
+		7ADB945F21A7609300D253F0 /* serverResponse */ = {
+			isa = PBXGroup;
+			children = (
+				7A4160AB21A665110061A12C /* SuccessResponse.swift */,
+			);
+			path = serverResponse;
+			sourceTree = "<group>";
+		};
+		7ADB946021A7613800D253F0 /* application */ = {
+			isa = PBXGroup;
+			children = (
+				7AC9C90521A65A82002156B1 /* StudentDTO.swift */,
+			);
+			path = application;
+			sourceTree = "<group>";
+		};
+		7ADB946121A7614800D253F0 /* exception */ = {
+			isa = PBXGroup;
+			children = (
+				7A5160BF21993BC500BD7529 /* ErrorMessage.swift */,
+			);
+			path = exception;
 			sourceTree = "<group>";
 		};
 		FE6D200A263903647BF96AA8 /* Frameworks */ = {
@@ -389,6 +416,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-assignment5/Pods-assignment5-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/EVReflection/EVReflection.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -396,6 +424,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EVReflection.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,10 +506,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AB4575D219D00DA002F3987 /* Gateway.swift in Sources */,
+				7A4160AC21A665110061A12C /* SuccessResponse.swift in Sources */,
 				7A2A14822190E52C00FC34B5 /* ViewController.swift in Sources */,
-				7A5160C021993BC500BD7529 /* ErrorDTO.swift in Sources */,
+				7A5160C021993BC500BD7529 /* ErrorMessage.swift in Sources */,
 				7A2A14802190E52C00FC34B5 /* AppDelegate.swift in Sources */,
-				7A5160C321993D6500BD7529 /* ErrorMessage.swift in Sources */,
+				7A5160C321993D6500BD7529 /* ErrorException.swift in Sources */,
 				7AC9C90621A65A82002156B1 /* StudentDTO.swift in Sources */,
 				7A1261FA2198FD1A00CEABFF /* RegisterController.swift in Sources */,
 				7A1261FC2199017700CEABFF /* Student.swift in Sources */,

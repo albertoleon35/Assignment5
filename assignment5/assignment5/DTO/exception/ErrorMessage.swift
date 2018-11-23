@@ -7,11 +7,15 @@
 //
 
 import Foundation
+import EVReflection
 
-struct ErrorDTO {
-    let error: String
+class ErrorMessage : EVObject {
+    var error: String?
     
     init(errorMessage: String) {
         self.error = errorMessage
+    }
+    
+    required init() {
     }
 }

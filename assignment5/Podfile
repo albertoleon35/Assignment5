@@ -10,6 +10,7 @@ target 'assignment5' do
   # Pods for assignment5
   pod 'Alamofire', '~> 4.7'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'EVReflection/Alamofire’
 
   target 'assignment5Tests' do
     inherit! :search_paths

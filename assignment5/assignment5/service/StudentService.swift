@@ -16,18 +16,18 @@ class StudentService {
         self.student = student
     }
     
-    public func isStudentValid() -> Student? {
+    public func isStudentValid() throws -> Student? {
         
         guard let redid = self.student.redid, self.isRedIdValid(redId: redid.trimmingCharacters(in: .whitespaces)) else {
-            return nil;
+            throw ErrorException.errorMessage(error: ErrorMessage(errorMessage: "Red Id is invalid it should be 9 digits long"))
         }
         
         guard let password = self.student.password, isPasswordValid(password: password.trimmingCharacters(in: .whitespaces)) else {
-            return nil;
+            throw ErrorException.errorMessage(error: ErrorMessage(errorMessage: "Password should be at least 8 characters"))
         }
         
         guard let email = self.student.email, isEmailValid(email: email.trimmingCharacters(in: .whitespaces)) else {
-            return nil;
+            throw ErrorException.errorMessage(error: ErrorMessage(errorMessage: "Email is invalid"))
         }
         
         guard let firstName = student.firstname, let lastName = self.student.lastname else {

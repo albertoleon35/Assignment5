@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
 
 
 class Gateway {
@@ -21,25 +20,21 @@ class Gateway {
         self.value = value
     }
     
-    public func submitStudent(completionHandler: @escaping (Any, Error?) -> ()) {
+    public func submitStudent(completionHandler: @escaping (SuccessResponse?, ErrorMessage?) -> ()) {
         self.post(completionHandler: completionHandler)
     }
     
-    fileprivate func post(completionHandler: @escaping (Any, Error?) -> ()) {
+    fileprivate func post(completionHandler: @escaping (SuccessResponse?, ErrorMessage?) -> ()) {
        
         var request = URLRequest(url: self.url)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = self.value
         
-        Alamofire.request(request).responseJSON { (response) in
-            guard let value = response.value as? Any else {
-                return;
+        Alamofire.request(request).validate(statusCode: 200..<300).responseObject { (response: DataResponse<SuccessResponse>) in
+            if let result = response.result.value {
+                completionHandler(result, nil)
             }
-            print(response.result)
-            print(response.response?.statusCode)
-            print(response.response.debugDescription)
-            completionHandler(value, nil)
         }
     }
 }

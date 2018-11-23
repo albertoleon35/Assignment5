@@ -11,17 +11,17 @@ import Foundation
 
 class ObjectConverter {
     
-    public func ConvertToData(object: Student) throws -> Data {
+    public func ConvertStudentToData(object: Student) throws -> Data {
                 
         let jsonEncoder = JSONEncoder()
         let jsonData = try jsonEncoder.encode(object)
         
         guard let json = String(data: jsonData, encoding: String.Encoding.utf8) else {
-            throw ErrorMessage.errorRegisteringStudent(error: ErrorDTO(errorMessage: "Error serializing object"))
+            throw ErrorException.errorMessage(error: ErrorMessage(errorMessage: "Error serializing object"))
         }
     
         guard let data = json.data(using: .utf8) else {
-            throw ErrorMessage.errorRegisteringStudent(error: ErrorDTO(errorMessage: "some error"))
+            throw ErrorException.errorMessage(error: ErrorMessage(errorMessage: "some error"))
         }
         
         return data;

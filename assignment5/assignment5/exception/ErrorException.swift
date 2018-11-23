@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum ErrorMessage: Error {
-    case errorRegisteringStudent(error: ErrorDTO);
+enum ErrorException: Error {
+    case errorMessage(error: ErrorMessage);
 }
