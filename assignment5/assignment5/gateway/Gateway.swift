@@ -9,22 +9,45 @@
 import Foundation
 import Alamofire
 
-
 class Gateway {
     
     let url: URL
-    let value: Data
+    let value: Data?
     
     init (url: URL, value: Data) {
         self.url = url
         self.value = value
     }
     
-    public func submitStudent(completionHandler: @escaping (SuccessResponse?, ErrorMessage?) -> ()) {
-        self.post(completionHandler: completionHandler)
+    init (url: URL) {
+        self.url = url
+        self.value = nil
+    }
+
+    public func submitStudent(completionHandler: @escaping (SuccessResponse?) -> ()) {
+        self.createStudent(completionHandler: completionHandler)
     }
     
-    fileprivate func post(completionHandler: @escaping (SuccessResponse?, ErrorMessage?) -> ()) {
+    public func getClassesSubjectLists(completionHandler: @escaping ([SubjectDetailsResponse]?) -> ()) {
+        self.getClasses(completionHandler: completionHandler)
+    }
+    
+    fileprivate func getClasses(completionHandler: @escaping ([SubjectDetailsResponse]?) -> ()) {
+        
+        var otherRequest = URLRequest(url: self.url)
+        otherRequest.httpMethod = HTTPMethod.get.rawValue
+        otherRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        
+        Alamofire.request(otherRequest).validate(statusCode: 200..<300).responseString { response in
+            
+            if let result = response.result.value {
+                completionHandler([SubjectDetailsResponse](json: result))
+            }
+        }
+    }
+    
+    fileprivate func createStudent(completionHandler: @escaping (SuccessResponse?) -> ()) {
        
         var request = URLRequest(url: self.url)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -33,7 +56,7 @@ class Gateway {
         
         Alamofire.request(request).validate(statusCode: 200..<300).responseObject { (response: DataResponse<SuccessResponse>) in
             if let result = response.result.value {
-                completionHandler(result, nil)
+                completionHandler(result)
             }
         }
     }

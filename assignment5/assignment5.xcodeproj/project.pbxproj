@@ -22,6 +22,9 @@
 		7A5160C021993BC500BD7529 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5160BF21993BC500BD7529 /* ErrorMessage.swift */; };
 		7A5160C321993D6500BD7529 /* ErrorException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5160C221993D6500BD7529 /* ErrorException.swift */; };
 		7A5160C521993FD600BD7529 /* ObjectConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5160C421993FD600BD7529 /* ObjectConverter.swift */; };
+		7A554BF721AA02BD00974F63 /* SearchClassesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A554BF621AA02BD00974F63 /* SearchClassesController.swift */; };
+		7A554BFB21AB5E3500974F63 /* SubjectDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A554BFA21AB5E3500974F63 /* SubjectDetailsResponse.swift */; };
+		7A554BFF21ABB95500974F63 /* ClassDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A554BFE21ABB95500974F63 /* ClassDetailDTO.swift */; };
 		7AA5201121A4E93A00F73457 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5201021A4E93A00F73457 /* Constants.swift */; };
 		7AB4575D219D00DA002F3987 /* Gateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4575C219D00DA002F3987 /* Gateway.swift */; };
 		7AC9C90621A65A82002156B1 /* StudentDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC9C90521A65A82002156B1 /* StudentDTO.swift */; };
@@ -69,6 +72,9 @@
 		7A5160BF21993BC500BD7529 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		7A5160C221993D6500BD7529 /* ErrorException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorException.swift; sourceTree = "<group>"; };
 		7A5160C421993FD600BD7529 /* ObjectConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectConverter.swift; sourceTree = "<group>"; };
+		7A554BF621AA02BD00974F63 /* SearchClassesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchClassesController.swift; sourceTree = "<group>"; };
+		7A554BFA21AB5E3500974F63 /* SubjectDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectDetailsResponse.swift; sourceTree = "<group>"; };
+		7A554BFE21ABB95500974F63 /* ClassDetailDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailDTO.swift; sourceTree = "<group>"; };
 		7AA5201021A4E93A00F73457 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7AB4575C219D00DA002F3987 /* Gateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gateway.swift; sourceTree = "<group>"; };
 		7AC9C90521A65A82002156B1 /* StudentDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDTO.swift; sourceTree = "<group>"; };
@@ -149,7 +155,9 @@
 		7A1261F82198FCB100CEABFF /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				7A2A14812190E52C00FC34B5 /* ViewController.swift */,
 				7A1261F92198FD1A00CEABFF /* RegisterController.swift */,
+				7A554BF621AA02BD00974F63 /* SearchClassesController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -189,15 +197,14 @@
 		7A2A147E2190E52C00FC34B5 /* assignment5 */ = {
 			isa = PBXGroup;
 			children = (
+				7A1261F82198FCB100CEABFF /* controller */,
 				7AB4575B219D00BF002F3987 /* gateway */,
 				7A5160C121993D5300BD7529 /* exception */,
 				7A1261FF2199043D00CEABFF /* DTO */,
-				7A1261F82198FCB100CEABFF /* controller */,
 				7A1261F72198FCAB00CEABFF /* domain */,
 				7A1261F62198FC9500CEABFF /* service */,
 				7A1261F52198FC6D00CEABFF /* utilities */,
 				7A2A147F2190E52C00FC34B5 /* AppDelegate.swift */,
-				7A2A14812190E52C00FC34B5 /* ViewController.swift */,
 				7A2A14832190E52C00FC34B5 /* Main.storyboard */,
 				7A2A14862190E52D00FC34B5 /* Assets.xcassets */,
 				7A2A14882190E52D00FC34B5 /* LaunchScreen.storyboard */,
@@ -244,6 +251,7 @@
 		7ADB945F21A7609300D253F0 /* serverResponse */ = {
 			isa = PBXGroup;
 			children = (
+				7A554BFA21AB5E3500974F63 /* SubjectDetailsResponse.swift */,
 				7A4160AB21A665110061A12C /* SuccessResponse.swift */,
 			);
 			path = serverResponse;
@@ -253,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				7AC9C90521A65A82002156B1 /* StudentDTO.swift */,
+				7A554BFE21ABB95500974F63 /* ClassDetailDTO.swift */,
 			);
 			path = application;
 			sourceTree = "<group>";
@@ -507,6 +516,8 @@
 			files = (
 				7AB4575D219D00DA002F3987 /* Gateway.swift in Sources */,
 				7A4160AC21A665110061A12C /* SuccessResponse.swift in Sources */,
+				7A554BF721AA02BD00974F63 /* SearchClassesController.swift in Sources */,
+				7A554BFB21AB5E3500974F63 /* SubjectDetailsResponse.swift in Sources */,
 				7A2A14822190E52C00FC34B5 /* ViewController.swift in Sources */,
 				7A5160C021993BC500BD7529 /* ErrorMessage.swift in Sources */,
 				7A2A14802190E52C00FC34B5 /* AppDelegate.swift in Sources */,
@@ -517,6 +528,7 @@
 				7A5160C521993FD600BD7529 /* ObjectConverter.swift in Sources */,
 				7A1261FE2199041800CEABFF /* StudentService.swift in Sources */,
 				7AA5201121A4E93A00F73457 /* Constants.swift in Sources */,
+				7A554BFF21ABB95500974F63 /* ClassDetailDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

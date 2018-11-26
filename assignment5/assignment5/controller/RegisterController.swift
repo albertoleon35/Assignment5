@@ -16,8 +16,12 @@ class RegisterViewController: UIViewController, UIAlertViewDelegate {
     @IBOutlet weak var emailAddressTextBox: UITextField!
     @IBOutlet weak var passwordTextBox: UITextField!
     let uri = "addstudent"
-    var messageAlert = "";
-    var success = false;
+    let successMessage = "You have successfully registered"
+    let toViewScheduleFromRegisterId = "toViewScheduleFromRegister"
+    
+    var messageAlert = ""
+    var success = false
+    var createdStudent: Student?
     
     
     @IBAction func registerButtonPressed(_ sender: Any) {
@@ -29,9 +33,9 @@ class RegisterViewController: UIViewController, UIAlertViewDelegate {
             guard let studentToCreate = validStudent else {
                 return;
             }
-            createStudent(student: studentToCreate)
+            self.createStudent(student: studentToCreate)
         } catch ErrorException.errorMessage(let error) {
-            self.messageAlert = error.error!;
+            self.messageAlert = error.error!
             showAlert()
         } catch {
             
@@ -43,9 +47,15 @@ class RegisterViewController: UIViewController, UIAlertViewDelegate {
     }
     
     @IBAction func showAlert() {
-        self.success ? self.displayAlert() : self.displayAlert()
+        self.displayAlert()
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == self.toViewScheduleFromRegisterId {
+            //TODO: set STUDENT on new segue maybe need to persist it on UserDefaults as well
+        }
+    }
+    
     fileprivate func createStudent(student: Student) {
         
         do {
@@ -53,28 +63,29 @@ class RegisterViewController: UIViewController, UIAlertViewDelegate {
             let data = try ObjectConverter().ConvertStudentToData(object: student)
             let gateway = Gateway(url: url, value: data)
             
-            gateway.submitStudent() { successMessage, errorMessage in
-                if let response = successMessage?.error {
+            gateway.submitStudent() { message in
+                if let response = message?.error {
                     self.messageAlert = "\(response)"
                     self.showAlert()
                     return;
                 }
                 self.success = true;
-                self.messageAlert = "You have successfully registered"
+                self.messageAlert = self.successMessage
+                self.createdStudent = student
                 self.showAlert();
                 
             }
-        } catch ErrorException.errorMessage(let error) {
+        } catch ErrorException.errorMessage(_) {
         } catch {
         }
     }
     
     fileprivate func displayAlert() {
         let alert = UIAlertController(title: "\(self.messageAlert)", message: "", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            self.performSegue(withIdentifier: "toViewScheduleFromRegister", sender: nil)
-        }))
+        
+        success ? alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.performSegue(withIdentifier: self.toViewScheduleFromRegisterId, sender: nil)
+        })) : alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         
         self.present(alert, animated: true)
     }

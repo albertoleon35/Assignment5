@@ -30,9 +30,8 @@ class StudentService {
             throw ErrorException.errorMessage(error: ErrorMessage(errorMessage: "Email is invalid"))
         }
         
-        guard let firstName = student.firstname, let lastName = self.student.lastname else {
-            return nil;
-        }
+        let firstName = student.firstname ?? ""
+        let lastName = self.student.lastname ?? ""
         
         return Student(firstName: firstName, lastName: lastName, redId: redid, password: password, email: email);
     }
