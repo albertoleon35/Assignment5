@@ -38,7 +38,11 @@ class SearchClassesViewController : UIViewController, UIPickerViewDelegate, UIPi
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
-        if self.classStartTime >= self.classEndTime {
+        guard let value = identifier else {
+            return true;
+        }
+        
+        if self.classStartTime >= self.classEndTime && value != "backToregister" {
             self.displayAlert()
             return false
         }
@@ -49,6 +53,10 @@ class SearchClassesViewController : UIViewController, UIPickerViewDelegate, UIPi
             if segue.identifier == self.segueIdentifierName, let filteredClassViewController = segue.destination as? FilteredClassesViewController  {
                 filteredClassViewController.classDetailDTO = ClassDetailDTO(subject: subjectDetail, level: classLevel, startTime: classStartTime, endTime: classEndTime)
                 }
+    }
+
+    @IBAction func backFromClassesView(segue: UIStoryboardSegue) {
+        print("here")
     }
     
     @IBAction func backFromFilteredView(segue: UIStoryboardSegue) {

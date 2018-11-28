@@ -52,6 +52,9 @@ class FilteredClassesViewController: UITableViewController  {
         }
     }
     
+    @IBAction func backFromClassDetailViewToFilterClassesTableView(segue: UIStoryboardSegue) {
+    }
+    
     fileprivate func getClassIds() {
         do {
             let gateway = try Gateway(url: Constants.getUrl(uri: classIdUri))

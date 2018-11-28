@@ -19,7 +19,7 @@ class RegisterViewController: UIViewController, UIAlertViewDelegate {
     let redIdEquals = "Red Id already in use"
     let alreadyRegistered = "Red Id is already registered. We are taking to search classes."
     let successMessage = "You have successfully registered"
-    let scheduleMessage = "Retreieving class schedule"
+    let scheduleMessage = "Retrieving class schedule"
     let toViewScheduleFromRegisterId = "toViewScheduleFromRegister"
     let toSearchClassesFromRegister = "toSearchClassesFromRegister"
     
@@ -79,6 +79,10 @@ class RegisterViewController: UIViewController, UIAlertViewDelegate {
         if segue.identifier == self.toViewScheduleFromRegisterId {
             
         }
+    }
+
+    @IBAction func backToRegisterView(segue: UIStoryboardSegue) {
+        print("here")
     }
     
     fileprivate func createStudent(student: Student) {

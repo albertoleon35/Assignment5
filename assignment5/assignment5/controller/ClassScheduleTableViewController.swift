@@ -48,8 +48,14 @@ class ClassScheduleTableViewController: UITableViewController {
                 let selectedRow = indexPath.row
                 filteredClassViewController.classDetail = self.classDetailArray[selectedRow]
                 filteredClassViewController.flagSegue = self.toClassDetailFromViewSchedule
+                filteredClassViewController.classesDetail = self.classDetailArray
+                filteredClassViewController.studentClasses = self.studentClasses
             }
         }
+    }
+    
+    @IBAction func backFromClassDetailView(segue: UIStoryboardSegue) {
+        self.tableView.reloadData()
     }
     
     fileprivate func getStudentClasses() {

@@ -21,7 +21,11 @@ class ClassDetailViewController: UIViewController {
     @IBOutlet weak var unregisterButton: UIButton!
     @IBOutlet weak var unWaitlist: UIButton!
     
+    @IBOutlet weak var goBackClassScheduleTableViewButton: UIButton!
+    @IBOutlet weak var goBackToStudentClassScheduleButton: UIButton!
     var classDetail: ClassDetailsResponse? = ClassDetailsResponse()
+    var classesDetail: [ClassDetailsResponse]?
+    var studentClasses : StudentClasses?
     var flagSegue: String?
     var success = false
     let toClassDetailsFromClassDetailsTableView = "toClassDetailsFromClassDetailsTableView"
@@ -44,6 +48,15 @@ class ClassDetailViewController: UIViewController {
         self.popuplateData()
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
+        if segue.identifier == "backToClassSchedule", let classScheduleTableViewController = segue.destination as? ClassScheduleTableViewController, let classes = self.classesDetail {
+            classScheduleTableViewController.classDetailArray = classes
+        }
+        
+    }
+    
     @IBAction func unwaitlistButtonPressed(_ sender: Any) {
         do {
             let gateway = try Gateway(url: Constants.getUrl(uri: unwaitListClassUri))
@@ -60,6 +73,8 @@ class ClassDetailViewController: UIViewController {
                 }
                 self.success = true;
                 self.messageAlert = self.unwaitlistedMessage
+                self.popFromClassesArray(id: details.id);
+                self.unWaitlist.isEnabled = false;
                 self.displayAlert();
             }
         } catch  {
@@ -87,6 +102,7 @@ class ClassDetailViewController: UIViewController {
         } catch  {
         }
     }
+    
     @IBAction func unregisteredClassButtonPressed(_ sender: Any) {
         do {
             let gateway = try Gateway(url: Constants.getUrl(uri: self.unregisteredClassUri))
@@ -103,6 +119,8 @@ class ClassDetailViewController: UIViewController {
                 }
                 self.success = true;
                 self.messageAlert = self.successMessageUnregisterClass
+                self.popFromClassesArray(id: details.id);
+                self.unregisterButton.isEnabled = false;
                 self.displayAlert();
             }
         } catch  {
@@ -138,6 +156,14 @@ class ClassDetailViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    
+    fileprivate func popFromClassesArray(id: Int) {
+        guard let index = self.classesDetail?.firstIndex(where: {$0.id == id}) else {
+            return
+        }
+        self.classesDetail?.remove(at: index)
+    }
+
     fileprivate func enableButtons() {
         guard let details = classDetail, let flag = self.flagSegue else {
             return
@@ -146,8 +172,18 @@ class ClassDetailViewController: UIViewController {
             if details.seats == 1 {
                 registerButton.isEnabled = false
                 waitListButton.isEnabled = true
+               
+            
+                unregisterButton.isEnabled = false
+                unWaitlist.isEnabled = false
+                unregisterButton.isHidden = true
+                unWaitlist.isHidden = true
                 return
             }
+            
+            goBackClassScheduleTableViewButton.isEnabled = true;
+            goBackToStudentClassScheduleButton.isEnabled = false
+            goBackToStudentClassScheduleButton.isHidden = true;
             unregisterButton.isEnabled = false
             unWaitlist.isEnabled = false
             unregisterButton.isHidden = true
@@ -156,6 +192,26 @@ class ClassDetailViewController: UIViewController {
             waitListButton.isEnabled = false
         }
         else {
+            goBackToStudentClassScheduleButton.isEnabled = true;
+            goBackClassScheduleTableViewButton.isEnabled = false
+            goBackClassScheduleTableViewButton.isHidden = true;
+            
+            guard let classes = self.studentClasses else {
+                return
+            }
+            
+            unregisterButton.isHidden = false
+            unWaitlist.isHidden = false
+            
+            if classes.classes.contains(classDetail?.id ?? 0) {
+                unregisterButton.isEnabled = true
+                unWaitlist.isEnabled = false
+            }
+            else {
+                unregisterButton.isEnabled = false
+                unWaitlist.isEnabled = true
+            }
+            
             registerButton.isEnabled = false
             waitListButton.isEnabled = false
             registerButton.isHidden = true
@@ -189,8 +245,6 @@ class ClassDetailViewController: UIViewController {
         
         waitListValue.text = String(details.waitlist)
         waitListValue.isHidden = false
-        
-        
     }
     
 }
