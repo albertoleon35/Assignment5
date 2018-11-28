@@ -23,4 +23,19 @@ class Student : Codable {
         self.password = password;
         self.email = email;
     }
+    
+    public func ConvertStudentToData(object: Student) throws -> Data {
+        let jsonEncoder = JSONEncoder()
+        let jsonData = try jsonEncoder.encode(object)
+        
+        guard let json = String(data: jsonData, encoding: String.Encoding.utf8) else {
+            throw ErrorException.errorMessage(error: ErrorMessage(errorMessage: "Error serializing object"))
+        }
+        
+        guard let data = json.data(using: .utf8) else {
+            throw ErrorException.errorMessage(error: ErrorMessage(errorMessage: "some error"))
+        }
+        
+        return data;
+    }
 }

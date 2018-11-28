@@ -1,28 +1,36 @@
 //
-//  RegisterStudentRepository.swift
+//  ClassStudentDTO.swift
 //  assignment5
 //
-//  Created by Alberto Leon on 11/11/18.
+//  Created by Alberto Leon on 11/27/18.
 //  Copyright © 2018 Alberto Leon. All rights reserved.
 //
 
 import Foundation
+import EVReflection
 
-
-class ObjectConverter {
+class ClassStudentDTO : Codable{
+    let redid, password: String
     
-    public func ConvertStudentToData(object: Student) throws -> Data {
+    init(redid: String, password: String) {
+        self.redid = redid
+        self.password = password
+    }
+
+    public func ConvertToData(object: ClassStudentDTO) throws -> Data {
         let jsonEncoder = JSONEncoder()
         let jsonData = try jsonEncoder.encode(object)
         
         guard let json = String(data: jsonData, encoding: String.Encoding.utf8) else {
             throw ErrorException.errorMessage(error: ErrorMessage(errorMessage: "Error serializing object"))
         }
-    
+        
         guard let data = json.data(using: .utf8) else {
             throw ErrorException.errorMessage(error: ErrorMessage(errorMessage: "some error"))
         }
         
         return data;
     }
+    
+    
 }

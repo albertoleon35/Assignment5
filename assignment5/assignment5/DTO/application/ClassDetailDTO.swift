@@ -11,12 +11,19 @@ import Foundation
 class ClassDetailDTO {
     let classResponse: SubjectDetailsResponse
     let level: String
-    let time: String
+    let startTime: String
+    let endTime: String
     
-    init(subject: SubjectDetailsResponse, level: String, time: String) {
+    fileprivate let levelDictionary: Dictionary<String, String> = ["Lower Undergraduate (100 - 299)":"lower","Upper Undergraduate (300 - 599)":"upper","Graduate (500 - 899)":"graduate"]
+    
+    init(subject: SubjectDetailsResponse, level: String, startTime: String, endTime: String) {
         self.classResponse = subject
         self.level = level
-        self.time = time
+        self.startTime = startTime
+        self.endTime = endTime
     }
     
+    public func levelAdapter() -> String {
+        return self.levelDictionary[self.level] ?? "lower";
+    }
 }

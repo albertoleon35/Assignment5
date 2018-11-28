@@ -19,14 +19,23 @@
 		7A2A14952190E52D00FC34B5 /* assignment5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2A14942190E52D00FC34B5 /* assignment5Tests.swift */; };
 		7A2A14A02190E52D00FC34B5 /* assignment5UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2A149F2190E52D00FC34B5 /* assignment5UITests.swift */; };
 		7A4160AC21A665110061A12C /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4160AB21A665110061A12C /* SuccessResponse.swift */; };
+		7A42E94921ADB7D6006A478A /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A42E94821ADB7D6006A478A /* ClassDetailViewController.swift */; };
+		7A42E94B21ADD176006A478A /* AddStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A42E94A21ADD176006A478A /* AddStudent.swift */; };
+		7A42E94D21ADE497006A478A /* ClassScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A42E94C21ADE497006A478A /* ClassScheduleTableViewController.swift */; };
+		7A42E94F21ADF2BA006A478A /* ClassStudentDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A42E94E21ADF2BA006A478A /* ClassStudentDTO.swift */; };
+		7A42E95121ADF405006A478A /* StudentClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A42E95021ADF405006A478A /* StudentClasses.swift */; };
+		7A42E95321ADFDFF006A478A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A42E95221ADFDFF006A478A /* AppState.swift */; };
 		7A5160C021993BC500BD7529 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5160BF21993BC500BD7529 /* ErrorMessage.swift */; };
 		7A5160C321993D6500BD7529 /* ErrorException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5160C221993D6500BD7529 /* ErrorException.swift */; };
-		7A5160C521993FD600BD7529 /* ObjectConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5160C421993FD600BD7529 /* ObjectConverter.swift */; };
 		7A554BF721AA02BD00974F63 /* SearchClassesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A554BF621AA02BD00974F63 /* SearchClassesController.swift */; };
 		7A554BFB21AB5E3500974F63 /* SubjectDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A554BFA21AB5E3500974F63 /* SubjectDetailsResponse.swift */; };
 		7A554BFF21ABB95500974F63 /* ClassDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A554BFE21ABB95500974F63 /* ClassDetailDTO.swift */; };
+		7A554C0121ABC31E00974F63 /* FilteredClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A554C0021ABC31E00974F63 /* FilteredClassesViewController.swift */; };
+		7AA1260C21ACD6A500D51EE4 /* SubjectDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1260B21ACD6A500D51EE4 /* SubjectDTO.swift */; };
 		7AA5201121A4E93A00F73457 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5201021A4E93A00F73457 /* Constants.swift */; };
 		7AB4575D219D00DA002F3987 /* Gateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4575C219D00DA002F3987 /* Gateway.swift */; };
+		7AB7DA7D21AD164500A28FBF /* ClassDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB7DA7C21AD164500A28FBF /* ClassDetailsResponse.swift */; };
+		7AB7DA7F21AD21C600A28FBF /* ClassIds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB7DA7E21AD21C600A28FBF /* ClassIds.swift */; };
 		7AC9C90621A65A82002156B1 /* StudentDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC9C90521A65A82002156B1 /* StudentDTO.swift */; };
 		AACCA9BDA8FF76738B5FEF83 /* Pods_assignment5Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F2F8B1A7990752AB678425 /* Pods_assignment5Tests.framework */; };
 		C7BC58FF60FBB8101EBD1C85 /* Pods_assignment5UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7B2524A441BE7D34A0628E /* Pods_assignment5UITests.framework */; };
@@ -69,14 +78,23 @@
 		7A2A149F2190E52D00FC34B5 /* assignment5UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = assignment5UITests.swift; sourceTree = "<group>"; };
 		7A2A14A12190E52D00FC34B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A4160AB21A665110061A12C /* SuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponse.swift; sourceTree = "<group>"; };
+		7A42E94821ADB7D6006A478A /* ClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
+		7A42E94A21ADD176006A478A /* AddStudent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudent.swift; sourceTree = "<group>"; };
+		7A42E94C21ADE497006A478A /* ClassScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassScheduleTableViewController.swift; sourceTree = "<group>"; };
+		7A42E94E21ADF2BA006A478A /* ClassStudentDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassStudentDTO.swift; sourceTree = "<group>"; };
+		7A42E95021ADF405006A478A /* StudentClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClasses.swift; sourceTree = "<group>"; };
+		7A42E95221ADFDFF006A478A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		7A5160BF21993BC500BD7529 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		7A5160C221993D6500BD7529 /* ErrorException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorException.swift; sourceTree = "<group>"; };
-		7A5160C421993FD600BD7529 /* ObjectConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectConverter.swift; sourceTree = "<group>"; };
 		7A554BF621AA02BD00974F63 /* SearchClassesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchClassesController.swift; sourceTree = "<group>"; };
 		7A554BFA21AB5E3500974F63 /* SubjectDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectDetailsResponse.swift; sourceTree = "<group>"; };
 		7A554BFE21ABB95500974F63 /* ClassDetailDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailDTO.swift; sourceTree = "<group>"; };
+		7A554C0021ABC31E00974F63 /* FilteredClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredClassesViewController.swift; sourceTree = "<group>"; };
+		7AA1260B21ACD6A500D51EE4 /* SubjectDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectDTO.swift; sourceTree = "<group>"; };
 		7AA5201021A4E93A00F73457 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7AB4575C219D00DA002F3987 /* Gateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gateway.swift; sourceTree = "<group>"; };
+		7AB7DA7C21AD164500A28FBF /* ClassDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailsResponse.swift; sourceTree = "<group>"; };
+		7AB7DA7E21AD21C600A28FBF /* ClassIds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassIds.swift; sourceTree = "<group>"; };
 		7AC9C90521A65A82002156B1 /* StudentDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDTO.swift; sourceTree = "<group>"; };
 		85F2F8B1A7990752AB678425 /* Pods_assignment5Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_assignment5Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		895B311F909DA19F88A1C78B /* Pods-assignment5Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-assignment5Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-assignment5Tests/Pods-assignment5Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,14 +146,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		7A1261F52198FC6D00CEABFF /* utilities */ = {
-			isa = PBXGroup;
-			children = (
-				7A5160C421993FD600BD7529 /* ObjectConverter.swift */,
-			);
-			path = utilities;
-			sourceTree = "<group>";
-		};
 		7A1261F62198FC9500CEABFF /* service */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +168,9 @@
 				7A2A14812190E52C00FC34B5 /* ViewController.swift */,
 				7A1261F92198FD1A00CEABFF /* RegisterController.swift */,
 				7A554BF621AA02BD00974F63 /* SearchClassesController.swift */,
+				7A554C0021ABC31E00974F63 /* FilteredClassesViewController.swift */,
+				7A42E94821ADB7D6006A478A /* ClassDetailViewController.swift */,
+				7A42E94C21ADE497006A478A /* ClassScheduleTableViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -167,7 +180,7 @@
 			children = (
 				7ADB946121A7614800D253F0 /* exception */,
 				7ADB946021A7613800D253F0 /* application */,
-				7ADB945F21A7609300D253F0 /* serverResponse */,
+				7ADB945F21A7609300D253F0 /* server */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -203,13 +216,13 @@
 				7A1261FF2199043D00CEABFF /* DTO */,
 				7A1261F72198FCAB00CEABFF /* domain */,
 				7A1261F62198FC9500CEABFF /* service */,
-				7A1261F52198FC6D00CEABFF /* utilities */,
 				7A2A147F2190E52C00FC34B5 /* AppDelegate.swift */,
 				7A2A14832190E52C00FC34B5 /* Main.storyboard */,
 				7A2A14862190E52D00FC34B5 /* Assets.xcassets */,
 				7A2A14882190E52D00FC34B5 /* LaunchScreen.storyboard */,
 				7A2A148B2190E52D00FC34B5 /* Info.plist */,
 				7AA5201021A4E93A00F73457 /* Constants.swift */,
+				7A42E95221ADFDFF006A478A /* AppState.swift */,
 			);
 			path = assignment5;
 			sourceTree = "<group>";
@@ -240,6 +253,17 @@
 			path = exception;
 			sourceTree = "<group>";
 		};
+		7AA1260D21ACD6D700D51EE4 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				7AA1260B21ACD6A500D51EE4 /* SubjectDTO.swift */,
+				7AB7DA7E21AD21C600A28FBF /* ClassIds.swift */,
+				7A42E94A21ADD176006A478A /* AddStudent.swift */,
+				7A42E94E21ADF2BA006A478A /* ClassStudentDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
 		7AB4575B219D00BF002F3987 /* gateway */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,13 +272,16 @@
 			path = gateway;
 			sourceTree = "<group>";
 		};
-		7ADB945F21A7609300D253F0 /* serverResponse */ = {
+		7ADB945F21A7609300D253F0 /* server */ = {
 			isa = PBXGroup;
 			children = (
+				7AA1260D21ACD6D700D51EE4 /* DTO */,
 				7A554BFA21AB5E3500974F63 /* SubjectDetailsResponse.swift */,
 				7A4160AB21A665110061A12C /* SuccessResponse.swift */,
+				7AB7DA7C21AD164500A28FBF /* ClassDetailsResponse.swift */,
+				7A42E95021ADF405006A478A /* StudentClasses.swift */,
 			);
-			path = serverResponse;
+			path = server;
 			sourceTree = "<group>";
 		};
 		7ADB946021A7613800D253F0 /* application */ = {
@@ -517,17 +544,26 @@
 				7AB4575D219D00DA002F3987 /* Gateway.swift in Sources */,
 				7A4160AC21A665110061A12C /* SuccessResponse.swift in Sources */,
 				7A554BF721AA02BD00974F63 /* SearchClassesController.swift in Sources */,
+				7A42E95321ADFDFF006A478A /* AppState.swift in Sources */,
 				7A554BFB21AB5E3500974F63 /* SubjectDetailsResponse.swift in Sources */,
 				7A2A14822190E52C00FC34B5 /* ViewController.swift in Sources */,
 				7A5160C021993BC500BD7529 /* ErrorMessage.swift in Sources */,
+				7A42E94F21ADF2BA006A478A /* ClassStudentDTO.swift in Sources */,
 				7A2A14802190E52C00FC34B5 /* AppDelegate.swift in Sources */,
 				7A5160C321993D6500BD7529 /* ErrorException.swift in Sources */,
 				7AC9C90621A65A82002156B1 /* StudentDTO.swift in Sources */,
 				7A1261FA2198FD1A00CEABFF /* RegisterController.swift in Sources */,
+				7A42E94921ADB7D6006A478A /* ClassDetailViewController.swift in Sources */,
+				7A554C0121ABC31E00974F63 /* FilteredClassesViewController.swift in Sources */,
 				7A1261FC2199017700CEABFF /* Student.swift in Sources */,
-				7A5160C521993FD600BD7529 /* ObjectConverter.swift in Sources */,
+				7A42E94B21ADD176006A478A /* AddStudent.swift in Sources */,
+				7A42E94D21ADE497006A478A /* ClassScheduleTableViewController.swift in Sources */,
 				7A1261FE2199041800CEABFF /* StudentService.swift in Sources */,
+				7AB7DA7F21AD21C600A28FBF /* ClassIds.swift in Sources */,
+				7A42E95121ADF405006A478A /* StudentClasses.swift in Sources */,
+				7AB7DA7D21AD164500A28FBF /* ClassDetailsResponse.swift in Sources */,
 				7AA5201121A4E93A00F73457 /* Constants.swift in Sources */,
+				7AA1260C21ACD6A500D51EE4 /* SubjectDTO.swift in Sources */,
 				7A554BFF21ABB95500974F63 /* ClassDetailDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
